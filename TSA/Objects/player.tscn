@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcvbddnudx1c6"]
+
+[ext_resource type="Texture2D" uid="uid://cy72wcbjvp243" path="res://Sprites/DummySprite.png" id="1_7dsmy"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_h5k2w"]
+[ext_resource type="Texture2D" uid="uid://k1cuhiu86qbu" path="res://Sprites/DummySpriteFlipped.png" id="2_cxnmx"]
+[ext_resource type="PackedScene" uid="uid://ncmv1lama28k" path="res://Objects/dash_sprite.tscn" id="2_y8rsy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvlyr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7dsmy")
+}],
+"loop": true,
+"name": &"DASH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7dsmy")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7dsmy")
+}],
+"loop": true,
+"name": &"JUMPDOWN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7dsmy")
+}],
+"loop": true,
+"name": &"JUMPUP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7dsmy")
+}],
+"loop": true,
+"name": &"RUN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cxnmx")
+}],
+"loop": true,
+"name": &"TURN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7dsmy")
+}],
+"loop": true,
+"name": &"WALLSLIDE",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8xli"]
+size = Vector2(8, 16)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_h5k2w")
+dashObject = ExtResource("2_y8rsy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 1)
+sprite_frames = SubResource("SpriteFrames_rvlyr")
+animation = &"RUN"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h8xli")
+
+[node name="rayCastContainer" type="Marker2D" parent="."]
+position = Vector2(0, 5)
+
+[node name="rayGround" type="RayCast2D" parent="rayCastContainer"]
+scale = Vector2(7.75, 1)
+target_position = Vector2(0, 4)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="rayRight" type="RayCast2D" parent="rayCastContainer"]
+position = Vector2(0, 3)
+scale = Vector2(1, 4)
+target_position = Vector2(10, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="rayLeft" type="RayCast2D" parent="rayCastContainer"]
+position = Vector2(0, 3)
+scale = Vector2(1, 4)
+target_position = Vector2(-10, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+enabled = false
+
+[node name="dashTimer" type="Timer" parent="."]
+one_shot = true
