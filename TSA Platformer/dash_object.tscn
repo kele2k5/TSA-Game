@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ofm84bh847gw"]
+
+[ext_resource type="Texture2D" uid="uid://dnctrlr4n8oqs" path="res://DummySpriteFlipped.png" id="1_p7su5"]
+[ext_resource type="PackedScene" uid="uid://cb5ranrbbnqhy" path="res://dash_area.tscn" id="2_woi3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ilxp"]
+
+[node name="dash_object" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_p7su5")
+
+[node name="dash_area" parent="." instance=ExtResource("2_woi3y")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dash_area"]
+shape = SubResource("RectangleShape2D_8ilxp")
