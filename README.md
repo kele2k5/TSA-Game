@@ -1,6 +1,6 @@
 Game should be turned in my the 27th of Febraury 
 LIST IN ORDER OF IMPORTANCE
-Working Base Game []
+Working Base Game [X]
 Assets for stages + Extra movment abilities []
 Music and Sound effects []
 
