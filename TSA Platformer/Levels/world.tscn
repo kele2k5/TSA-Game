@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd01gdjwf2tmh"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_jhkg7"]
+[ext_resource type="PackedScene" uid="uid://2nnnqbdua2lk" path="res://Scenes/UI/level_completed.tscn" id="2_50r24"]
+[ext_resource type="PackedScene" uid="uid://dhncst50gofyh" path="res://Scenes/player.tscn" id="2_jb1v4"]
+
+[node name="World" type="Node2D"]
+position = Vector2(141, 164)
+script = ExtResource("1_jhkg7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("2_50r24")]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("2_jb1v4")]
+position = Vector2(21, -40)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 15
+position = Vector2(22, -73)
+zoom = Vector2(0.5, 0.5)
+
+[node name="HeartsContainer" type="Marker2D" parent="."]
+
+[node name="HazardContainer" type="Marker2D" parent="."]
+
+[node name="DashObjectContainer" type="Marker2D" parent="."]

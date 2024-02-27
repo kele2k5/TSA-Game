@@ -1,0 +1,141 @@
+[gd_scene load_steps=17 format=3 uid="uid://dhncst50gofyh"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_nj8n1"]
+[ext_resource type="Resource" uid="uid://c720n34yfj2e" path="res://Scripts/DefaultMovementData.tres" id="2_orqqy"]
+[ext_resource type="Texture2D" uid="uid://xhep2rwmcwdi" path="res://Sprites/player.png" id="3_h0ysf"]
+[ext_resource type="Texture2D" uid="uid://b54gn4hdqqu70" path="res://Sprites/Arrow.png" id="4_o5acq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4hi3"]
+atlas = ExtResource("3_h0ysf")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5t81"]
+atlas = ExtResource("3_h0ysf")
+region = Rect2(144, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjhu4"]
+atlas = ExtResource("3_h0ysf")
+region = Rect2(24, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h4ir"]
+atlas = ExtResource("3_h0ysf")
+region = Rect2(48, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqjfc"]
+atlas = ExtResource("3_h0ysf")
+region = Rect2(72, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nbsr"]
+atlas = ExtResource("3_h0ysf")
+region = Rect2(96, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoe3c"]
+atlas = ExtResource("3_h0ysf")
+region = Rect2(120, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udw4e"]
+atlas = ExtResource("3_h0ysf")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sc67f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4hi3")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5t81")
+}],
+"loop": true,
+"name": &"JUMP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjhu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h4ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqjfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nbsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoe3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udw4e")
+}],
+"loop": true,
+"name": &"RUN",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1os0"]
+size = Vector2(8, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t0us"]
+size = Vector2(6, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1iyt"]
+size = Vector2(20, 18.5)
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 20
+position = Vector2(0, -10)
+collision_layer = 2
+floor_constant_speed = true
+floor_snap_length = 3.0
+safe_margin = 0.1
+script = ExtResource("1_nj8n1")
+movement_data = ExtResource("2_orqqy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 10
+sprite_frames = SubResource("SpriteFrames_sc67f")
+animation = &"IDLE"
+
+[node name="ArrowSprite" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(0, 1)
+scale = Vector2(2.8, 1)
+texture = ExtResource("4_o5acq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_l1os0")
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.08
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.075
+one_shot = true
+
+[node name="HazardDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDetector"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_2t0us")
+
+[node name="DashDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DashDetector"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_v1iyt")
+
+[connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
