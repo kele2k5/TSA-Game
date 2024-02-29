@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgp04f1hub1uv"]
+
+[ext_resource type="PackedScene" uid="uid://bd01gdjwf2tmh" path="res://Levels/world.tscn" id="1_0o0bn"]
+[ext_resource type="PackedScene" uid="uid://cwiamkyn41utn" path="res://Scenes/Objects/out_of_bounds_zone.tscn" id="2_5hdog"]
+[ext_resource type="PackedScene" uid="uid://spprtly86p2d" path="res://Scenes/Objects/time_rift.tscn" id="2_gnryd"]
+[ext_resource type="PackedScene" uid="uid://ckgdvd41gp1bc" path="res://Scenes/TileMaps/Britain_Tilemap.tscn" id="2_njpyk"]
+[ext_resource type="PackedScene" uid="uid://bisw1yontfp6k" path="res://Levels/LevelThree/Zone3-3.tscn" id="2_rwaqn"]
+[ext_resource type="PackedScene" uid="uid://ofm84bh847gw" path="res://Scenes/Objects/dash_object.tscn" id="3_22jvr"]
+[ext_resource type="Texture2D" uid="uid://bd6freu2cgd5b" path="res://Sprites/Britain/Britain_BG.png" id="6_i232r"]
+
+[node name="World" instance=ExtResource("1_0o0bn")]
+next_level = ExtResource("2_rwaqn")
+
+[node name="Player" parent="." index="1"]
+position = Vector2(-157, -20)
+
+[node name="Camera2D" parent="." index="2"]
+zoom = Vector2(0.8, 0.8)
+
+[node name="TimeRift" parent="HeartsContainer" index="0" instance=ExtResource("2_gnryd")]
+position = Vector2(155, -20)
+
+[node name="TimeRift2" parent="HeartsContainer" index="1" instance=ExtResource("2_gnryd")]
+position = Vector2(43, -132)
+
+[node name="TimeRift3" parent="HeartsContainer" index="2" instance=ExtResource("2_gnryd")]
+position = Vector2(-69, -52)
+
+[node name="OutOfBounds" parent="HazardContainer" index="0" instance=ExtResource("2_5hdog")]
+position = Vector2(56, 52)
+
+[node name="dash_object" parent="DashObjectContainer" index="0" instance=ExtResource("3_22jvr")]
+position = Vector2(-109, -44)
+
+[node name="dash_object2" parent="DashObjectContainer" index="1" instance=ExtResource("3_22jvr")]
+position = Vector2(-13, -4)
+
+[node name="dash_object3" parent="DashObjectContainer" index="2" instance=ExtResource("3_22jvr")]
+position = Vector2(-13, -68)
+
+[node name="dash_object4" parent="DashObjectContainer" index="3" instance=ExtResource("3_22jvr")]
+position = Vector2(-13, -148)
+
+[node name="dash_object5" parent="DashObjectContainer" index="4" instance=ExtResource("3_22jvr")]
+position = Vector2(83, -60)
+
+[node name="dash_object6" parent="DashObjectContainer" index="5" instance=ExtResource("3_22jvr")]
+position = Vector2(195, -36)
+
+[node name="Background" parent="." index="6"]
+position = Vector2(19, -20)
+texture = ExtResource("6_i232r")
+
+[node name="TileMap" parent="." index="7" instance=ExtResource("2_njpyk")]
+position = Vector2(-277, 100)
+layer_0/tile_data = PackedInt32Array(-458746, 0, 5, -393210, 0, 6, -327674, 0, 7, -262138, 0, 8, -458745, 655360, 1, -393209, 65536, 6, -327673, 65536, 7, -262137, 65536, 8, -458744, 327680, 5, -393208, 327680, 6, -327672, 327680, 7, -262136, 327680, 8, -524276, 393216, 5, -458740, 393216, 6, -393204, 393216, 7, -327668, 393216, 8, -262132, 393216, 9, -262131, 458752, 9, -327667, 458752, 8, -393203, 458752, 7, -458739, 458752, 6, -524275, 458752, 5, -786420, 393216, 12, -851956, 393216, 10, -917492, 393216, 9, -983028, 393216, 8, -1048564, 393216, 7, -1114100, 393216, 6, -1179636, 393216, 9, -786419, 458752, 12, -851955, 458752, 10, -917491, 458752, 9, -983027, 458752, 8, -1048563, 458752, 7, -1114099, 458752, 6, -1179635, 458752, 8, -720877, 393216, 7, -786413, 393216, 7, -655341, 393216, 8, -589805, 393216, 9, -524269, 393216, 10, -458733, 393216, 11, -393197, 393216, 9, -327661, 393216, 10, -262125, 393216, 8, -851948, 458752, 5, -786412, 458752, 8, -720876, 458752, 9, -655340, 458752, 11, -589804, 458752, 9, -524268, 458752, 8, -458732, 458752, 7, -393196, 458752, 10, -327660, 458752, 8, -262124, 458752, 10, -1114093, 393216, 12, -1114092, 458752, 12, -1179628, 458752, 10, -1179629, 393216, 10, -458726, 0, 5, -393190, 0, 6, -327654, 0, 7, -393189, 65536, 6, -327653, 65536, 7, -262118, 0, 8, -262117, 65536, 6, -851949, 393216, 5, -524281, 655360, 0, -458728, 393216, 7, -458727, 458752, 7, -393192, 393216, 6, -327656, 393216, 7, -262120, 393216, 8, -327655, 458752, 7, -393191, 458752, 6, -262119, 458752, 8, -851943, 458752, 9, -917479, 458752, 8, -1114087, 458752, 8, -983015, 458752, 7, -1048551, 458752, 6, -1179623, 458752, 9, -1114088, 393216, 10, -1048552, 393216, 9, -983016, 393216, 6, -917480, 393216, 7, -851944, 393216, 8, -1179624, 393216, 6, -589800, 393216, 5, -589799, 458752, 5, -524264, 393216, 6, -524263, 458752, 6, -786408, 393216, 12, -786407, 458752, 12, -458725, 655360, 1, -524261, 655360, 0, -458724, 458752, 5, -393188, 458752, 7, -327652, 458752, 6, -262116, 458752, 7)

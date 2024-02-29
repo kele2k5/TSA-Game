@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://bisw1yontfp6k"]
+
+[ext_resource type="PackedScene" uid="uid://bd01gdjwf2tmh" path="res://Levels/world.tscn" id="1_me77q"]
+[ext_resource type="PackedScene" uid="uid://spprtly86p2d" path="res://Scenes/Objects/time_rift.tscn" id="2_234qc"]
+[ext_resource type="PackedScene" uid="uid://ckgdvd41gp1bc" path="res://Scenes/TileMaps/Britain_Tilemap.tscn" id="2_bmxw6"]
+[ext_resource type="PackedScene" uid="uid://cwiamkyn41utn" path="res://Scenes/Objects/out_of_bounds_zone.tscn" id="2_idlbt"]
+[ext_resource type="PackedScene" uid="uid://ofm84bh847gw" path="res://Scenes/Objects/dash_object.tscn" id="3_dvyv3"]
+[ext_resource type="Texture2D" uid="uid://bd6freu2cgd5b" path="res://Sprites/Britain/Britain_BG.png" id="5_vwkfn"]
+
+[node name="World" instance=ExtResource("1_me77q")]
+
+[node name="Player" parent="." index="1"]
+position = Vector2(-261, 60)
+
+[node name="TimeRift" parent="HeartsContainer" index="0" instance=ExtResource("2_234qc")]
+position = Vector2(-261, -52)
+
+[node name="TimeRift3" parent="HeartsContainer" index="1" instance=ExtResource("2_234qc")]
+position = Vector2(-93, -100)
+
+[node name="TimeRift2" parent="HeartsContainer" index="2" instance=ExtResource("2_234qc")]
+position = Vector2(-101, -4)
+metadata/_edit_group_ = true
+
+[node name="TimeRift4" parent="HeartsContainer" index="3" instance=ExtResource("2_234qc")]
+position = Vector2(-5, 44)
+metadata/_edit_group_ = true
+
+[node name="TimeRift5" parent="HeartsContainer" index="4" instance=ExtResource("2_234qc")]
+position = Vector2(43, -36)
+metadata/_edit_group_ = true
+
+[node name="TimeRift6" parent="HeartsContainer" index="5" instance=ExtResource("2_234qc")]
+position = Vector2(291, -38)
+metadata/_edit_group_ = true
+
+[node name="OutOfBounds" parent="HazardContainer" index="0" instance=ExtResource("2_idlbt")]
+position = Vector2(3, 116)
+
+[node name="dash_object" parent="DashObjectContainer" index="0" instance=ExtResource("3_dvyv3")]
+position = Vector2(-205, -92)
+
+[node name="dash_object2" parent="DashObjectContainer" index="1" instance=ExtResource("3_dvyv3")]
+position = Vector2(-133, -4)
+
+[node name="dash_object3" parent="DashObjectContainer" index="2" instance=ExtResource("3_dvyv3")]
+position = Vector2(-73, -4)
+metadata/_edit_group_ = true
+
+[node name="dash_object4" parent="DashObjectContainer" index="3" instance=ExtResource("3_dvyv3")]
+position = Vector2(-72, 68)
+metadata/_edit_group_ = true
+
+[node name="dash_object5" parent="DashObjectContainer" index="4" instance=ExtResource("3_dvyv3")]
+position = Vector2(-5, 68)
+metadata/_edit_group_ = true
+
+[node name="dash_object6" parent="DashObjectContainer" index="5" instance=ExtResource("3_dvyv3")]
+position = Vector2(83, -44)
+metadata/_edit_group_ = true
+
+[node name="dash_object7" parent="DashObjectContainer" index="6" instance=ExtResource("3_dvyv3")]
+position = Vector2(139, -44)
+metadata/_edit_group_ = true
+
+[node name="dash_object8" parent="DashObjectContainer" index="7" instance=ExtResource("3_dvyv3")]
+position = Vector2(195, -44)
+metadata/_edit_group_ = true
+
+[node name="dash_object9" parent="DashObjectContainer" index="8" instance=ExtResource("3_dvyv3")]
+position = Vector2(251, -44)
+metadata/_edit_group_ = true
+
+[node name="Background" parent="." index="6"]
+position = Vector2(67, -76)
+scale = Vector2(1.92, 1)
+texture = ExtResource("5_vwkfn")
+
+[node name="TileMap" parent="." index="7" instance=ExtResource("2_bmxw6")]
+position = Vector2(-141, -12)
+layer_0/tile_data = PackedInt32Array(393206, 0, 1, 393207, 65536, 1, 393208, 589824, 1, 327672, 589824, 0, 327671, 524288, 0, 393209, 262144, 5, 458745, 262144, 6, 524281, 262144, 7, 458742, 0, 6, 524278, 0, 7, 458743, 65536, 6, 458744, 131072, 6, 524279, 131072, 7, 524280, 196608, 7, -65546, 0, 5, -10, 0, 6, 65526, 0, 7, 131062, 0, 12, 131066, 327680, 12, 65530, 327680, 10, -6, 327680, 9, -65542, 327680, 5, -65543, 262144, 5, -65544, 196608, 5, -65545, 131072, 5, -9, 131072, 6, -8, 196608, 6, -7, 262144, 6, 65529, 262144, 7, 65528, 196608, 7, 65527, 131072, 7, 131063, 65536, 12, 131064, 131072, 12, 131065, 196608, 12, 393210, 327680, 5, 458746, 327680, 6, 524282, 327680, 7, 393213, 393216, 12, 393214, 458752, 12, 327677, 393216, 11, 262141, 393216, 10, 196605, 393216, 9, 131069, 393216, 8, 65533, 393216, 7, -3, 393216, 6, -65539, 393216, 10, -196611, 393216, 7, -327683, 393216, 10, -131075, 393216, 7, -262147, 393216, 9, 327678, 458752, 11, 262142, 458752, 10, 196606, 458752, 9, 131070, 458752, 8, 65534, 458752, 7, -2, 458752, 6, -458754, 458752, 5, -458755, 393216, 5, -393219, 393216, 7, -65538, 458752, 7, -131074, 458752, 6, -196610, 458752, 9, -262146, 458752, 8, -327682, 458752, 11, -393218, 458752, 10, -196602, 655360, 1, -131066, 196608, 6, -131065, 327680, 8, -65529, 327680, 9, -65530, 524288, 13, 6, 65536, 6, 65542, 65536, 7, 7, 327680, 10, 65543, 327680, 11, -196603, 393216, 5, -131067, 393216, 6, -65531, 393216, 7, 5, 0, 9, -327678, 393216, 5, -327677, 458752, 5, -262142, 393216, 6, -196606, 393216, 7, -131070, 393216, 12, -131069, 458752, 12, -196605, 458752, 9, -262141, 458752, 7, -65524, 327680, 5, 12, 327680, 6, 65548, 327680, 7, 131084, 327680, 9, 196620, 327680, 6, 262156, 327680, 9, 327692, 327680, 7, 393228, 327680, 12, -65510, 393216, 5, -65509, 458752, 5, 26, 393216, 6, 65563, 458752, 7, 65562, 393216, 7, 131098, 393216, 8, 196634, 393216, 9, 262170, 393216, 10, 327706, 393216, 11, 393242, 393216, 12, 393243, 458752, 12, 327707, 458752, 11, 262171, 458752, 10, 196635, 458752, 9, 131099, 458752, 8, 27, 458752, 6, 131077, 0, 12, 131078, 65536, 12, 131079, 327680, 12, -196601, 327680, 5, -262138, 655360, 0, 65541, 0, 8, -65526, 0, 5, -65525, 65536, 5, 327691, 196608, 11, 393227, 262144, 12, 327690, 0, 11, 262155, 196608, 10, 196619, 196608, 8, 131083, 196608, 7, 65546, 0, 6, 65547, 196608, 8, 11, 196608, 7, 10, 0, 7, 131082, 0, 8, 196618, 0, 9, 262154, 0, 10, 393226, 0, 12)

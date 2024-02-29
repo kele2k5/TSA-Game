@@ -1,0 +1,147 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl6m8462ijyp5"]
+
+[ext_resource type="PackedScene" uid="uid://bd01gdjwf2tmh" path="res://Levels/world.tscn" id="1_eop66"]
+[ext_resource type="PackedScene" uid="uid://bixagb4rsshsh" path="res://Levels/LevelThree/Zone3-1.tscn" id="2_qk8ll"]
+[ext_resource type="PackedScene" uid="uid://spprtly86p2d" path="res://Scenes/Objects/time_rift.tscn" id="2_s5wyo"]
+[ext_resource type="PackedScene" uid="uid://kk6kbe31nlt6" path="res://Scenes/TileMaps/egypt_tile_map.tscn" id="2_v11gr"]
+[ext_resource type="PackedScene" uid="uid://cwiamkyn41utn" path="res://Scenes/Objects/out_of_bounds_zone.tscn" id="3_6r6u2"]
+[ext_resource type="PackedScene" uid="uid://ofm84bh847gw" path="res://Scenes/Objects/dash_object.tscn" id="3_pqov1"]
+[ext_resource type="Texture2D" uid="uid://bw4xas1ubyr2n" path="res://Sprites/Egypt/EgyptBG.png" id="5_tekmu"]
+
+[node name="World" instance=ExtResource("1_eop66")]
+next_level = ExtResource("2_qk8ll")
+
+[node name="Player" parent="." index="1"]
+position = Vector2(19, 4)
+
+[node name="TimeRift" parent="HeartsContainer" index="0" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(19, 76)
+
+[node name="TimeRift7" parent="HeartsContainer" index="1" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(-13, 76)
+
+[node name="TimeRift8" parent="HeartsContainer" index="2" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(51, 76)
+
+[node name="TimeRift2" parent="HeartsContainer" index="3" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(19, -204)
+
+[node name="TimeRift3" parent="HeartsContainer" index="4" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(-77, -132)
+
+[node name="TimeRift4" parent="HeartsContainer" index="5" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(115, -132)
+
+[node name="TimeRift9" parent="HeartsContainer" index="6" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(267, -124)
+
+[node name="TimeRift12" parent="HeartsContainer" index="7" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(299, -212)
+
+[node name="TimeRift10" parent="HeartsContainer" index="8" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(-229, -124)
+
+[node name="TimeRift11" parent="HeartsContainer" index="9" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(-261, -212)
+
+[node name="TimeRift5" parent="HeartsContainer" index="10" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(299, 52)
+
+[node name="TimeRift6" parent="HeartsContainer" index="11" instance=ExtResource("2_s5wyo")]
+z_index = 10
+position = Vector2(-269, 52)
+
+[node name="OutOfBounds" parent="HazardContainer" index="0" instance=ExtResource("3_6r6u2")]
+position = Vector2(19, 116)
+
+[node name="DashObjectContainer" parent="." index="5"]
+position = Vector2(-5, -20)
+
+[node name="dash_object" parent="DashObjectContainer" index="0" instance=ExtResource("3_pqov1")]
+position = Vector2(-16, -144)
+
+[node name="dash_object8" parent="DashObjectContainer" index="1" instance=ExtResource("3_pqov1")]
+position = Vector2(-176, 96)
+
+[node name="dash_object9" parent="DashObjectContainer" index="2" instance=ExtResource("3_pqov1")]
+position = Vector2(-128, 96)
+
+[node name="dash_object10" parent="DashObjectContainer" index="3" instance=ExtResource("3_pqov1")]
+position = Vector2(-32, 96)
+
+[node name="dash_object6" parent="DashObjectContainer" index="4" instance=ExtResource("3_pqov1")]
+position = Vector2(168, 8)
+
+[node name="dash_object16" parent="DashObjectContainer" index="5" instance=ExtResource("3_pqov1")]
+position = Vector2(208, -56)
+
+[node name="dash_object18" parent="DashObjectContainer" index="6" instance=ExtResource("3_pqov1")]
+position = Vector2(192, -144)
+
+[node name="dash_object17" parent="DashObjectContainer" index="7" instance=ExtResource("3_pqov1")]
+position = Vector2(-160, -56)
+
+[node name="dash_object19" parent="DashObjectContainer" index="8" instance=ExtResource("3_pqov1")]
+position = Vector2(-144, -144)
+
+[node name="dash_object15" parent="DashObjectContainer" index="9" instance=ExtResource("3_pqov1")]
+position = Vector2(-120, 8)
+
+[node name="dash_object22" parent="DashObjectContainer" index="10" instance=ExtResource("3_pqov1")]
+position = Vector2(-144, 48)
+
+[node name="dash_object23" parent="DashObjectContainer" index="11" instance=ExtResource("3_pqov1")]
+position = Vector2(192, 48)
+
+[node name="dash_object7" parent="DashObjectContainer" index="12" instance=ExtResource("3_pqov1")]
+position = Vector2(-16, -72)
+
+[node name="dash_object5" parent="DashObjectContainer" index="13" instance=ExtResource("3_pqov1")]
+position = Vector2(64, -144)
+
+[node name="dash_object14" parent="DashObjectContainer" index="14" instance=ExtResource("3_pqov1")]
+position = Vector2(64, -72)
+
+[node name="dash_object20" parent="DashObjectContainer" index="15" instance=ExtResource("3_pqov1")]
+position = Vector2(64, -8)
+
+[node name="dash_object21" parent="DashObjectContainer" index="16" instance=ExtResource("3_pqov1")]
+position = Vector2(-16, -8)
+
+[node name="dash_object2" parent="DashObjectContainer" index="17" instance=ExtResource("3_pqov1")]
+position = Vector2(24, 96)
+
+[node name="dash_object3" parent="DashObjectContainer" index="18" instance=ExtResource("3_pqov1")]
+position = Vector2(-80, 96)
+
+[node name="dash_object11" parent="DashObjectContainer" index="19" instance=ExtResource("3_pqov1")]
+position = Vector2(80, 96)
+
+[node name="dash_object12" parent="DashObjectContainer" index="20" instance=ExtResource("3_pqov1")]
+position = Vector2(128, 96)
+
+[node name="dash_object13" parent="DashObjectContainer" index="21" instance=ExtResource("3_pqov1")]
+position = Vector2(224, 96)
+
+[node name="dash_object4" parent="DashObjectContainer" index="22" instance=ExtResource("3_pqov1")]
+position = Vector2(176, 96)
+
+[node name="Background" parent="." index="6"]
+position = Vector2(-53, 908)
+scale = Vector2(48.5, 48.5)
+texture = ExtResource("5_tekmu")
+
+[node name="EgyptTileMap" parent="." index="7" instance=ExtResource("2_v11gr")]
+position = Vector2(-13, 52)
+layer_0/tile_data = PackedInt32Array(-1179666, 262144, 0, -1114130, 196608, 1, -1048594, 196608, 1, -983058, 196608, 1, -917522, 262144, 4, -851986, 196608, 1, -786450, 196608, 1, -720914, 196608, 1, -655378, 196608, 1, -589842, 196608, 1, -524306, 196608, 1, -458770, 196608, 1, -393234, 196608, 1, -327698, 196608, 1, -262162, 196608, 1, -196626, 196608, 1, -131090, 196608, 1, -65554, 196608, 1, -18, 196608, 1, 65518, 196608, 1, 131054, 262144, 2, 196590, 0, 1, 262126, 262144, 1, 327662, 196608, 2, -1245163, 458752, 0, -1245164, 65536, 3, -1245165, 65536, 3, -1245166, 65536, 3, -1245167, 65536, 3, -1245168, 65536, 3, -1245169, 65536, 3, -1245170, 65536, 3, -1245171, 65536, 3, -1245172, 65536, 3, -1245173, 65536, 3, -1245174, 65536, 3, -1245175, 65536, 3, -1245176, 65536, 3, -1245177, 65536, 3, -1245178, 327680, 0, -1245179, 65536, 0, -1245180, 65536, 0, -1245181, 393216, 0, -1245182, 65536, 3, -1245183, 65536, 3, -1245184, 327680, 0, -1179649, 65536, 0, -1179650, 65536, 0, -1179651, 393216, 0, -1179652, 65536, 3, -1179653, 65536, 3, -1179654, 65536, 3, -1179655, 65536, 3, -1179656, 65536, 3, -1179657, 65536, 3, -1179658, 65536, 3, -1179659, 65536, 3, -1179660, 65536, 3, -1179661, 65536, 3, -1179662, 65536, 3, -1179663, 65536, 3, -1179664, 65536, 3, -1179665, 65536, 3, -1179627, 196608, 1, -1114091, 196608, 1, 262165, 196608, 2, 196629, 458752, 1, 131093, 131072, 1, 65557, 458752, 2, 21, 196608, 1, -65515, 196608, 1, -131051, 196608, 1, -196587, 196608, 1, -262123, 196608, 1, -327659, 196608, 1, -393195, 196608, 1, -458731, 196608, 1, -524267, 196608, 1, -589803, 196608, 1, -655339, 196608, 1, -720875, 196608, 1, -786411, 196608, 1, -851947, 196608, 1, -917483, 196608, 1, -983019, 458752, 4, -1048555, 196608, 1, 196625, 0, 2, 196626, 65536, 2, 196627, 65536, 2, 196628, 65536, 2, 131089, 0, 1, 131090, 65536, 1, 131091, 65536, 1, 131092, 65536, 1, 65556, 65536, 0, 65555, 65536, 0, 65554, 65536, 0, 65553, 0, 0, 262127, 65536, 2, 262128, 65536, 2, 262129, 65536, 2, 262130, 131072, 2, 196594, 131072, 1, 131058, 131072, 0, 131057, 65536, 0, 196593, 65536, 1, 196592, 65536, 1, 131056, 65536, 0, 131055, 65536, 0, 196591, 65536, 1, -6, 0, 2, -65542, 0, 0, -65541, 65536, 0, -65540, 65536, 0, -65539, 65536, 0, -65538, 65536, 0, -65537, 65536, 0, -131072, 65536, 0, -131071, 65536, 0, -131070, 65536, 0, -131069, 65536, 0, -131068, 65536, 0, -65532, 65536, 2, -65531, 65536, 2, -65530, 65536, 2, -131064, 65536, 0, -131065, 65536, 0, -131066, 65536, 0, -131067, 65536, 0, -65528, 65536, 2, -65527, 131072, 2, -131063, 131072, 0, -65529, 65536, 2, -5, 65536, 2, -4, 65536, 2, -3, 65536, 2, -2, 65536, 2, -1, 65536, 2, -65536, 65536, 2, -65535, 65536, 2, -65534, 65536, 2, -65533, 65536, 2, -917516, 131072, 3, -917517, 65536, 3, -917518, 65536, 3, -917519, 65536, 3, -917520, 65536, 3, -917521, 65536, 3, -983020, 65536, 3, -983021, 65536, 3, -983022, 65536, 3, -983023, 65536, 3, -983024, 65536, 3, -983025, 0, 3, -524301, 131072, 2, -589837, 131072, 0, -524302, 65536, 2, -589838, 65536, 0, -524303, 0, 2, -589839, 0, 0, -589806, 131072, 2, -655342, 131072, 0, -589807, 65536, 2, -655343, 65536, 0, -589808, 0, 2, -655344, 0, 0, -786430, 131072, 1, -786431, 0, 1, -589827, 196608, 2, -655363, 196608, 1, -720899, 196608, 1, -786435, 196608, 1, -851971, 196608, 1, -917507, 196608, 1, -983043, 262144, 1, -1048579, 0, 1, -1114115, 0, 1, -655354, 196608, 2, -720890, 196608, 1, -786426, 196608, 1, -851962, 196608, 1, -917498, 196608, 1, -983034, 196608, 1, -1048570, 458752, 1, -1114106, 131072, 1, -1179642, 131072, 1, -262154, 131072, 3, -262155, 65536, 3, -327666, 65536, 3, -327667, 0, 3, -655366, 196608, 2, -720902, 196608, 1, -786438, 196608, 0, -720887, 196608, 2, -786423, 196608, 1, -851959, 196608, 0, -589822, 131072, 2, -655358, 131072, 1, -720894, 131072, 1, -589823, 0, 2, -655359, 0, 1, -720895, 0, 1, -1048577, 131072, 2, -1114113, 327680, 1, -1048578, 327680, 1, -1114114, 65536, 1, -1114107, 393216, 1, -1179643, 65536, 1, -1114108, 0, 2, -1179644, 393216, 1, -1179645, 0, 2, -1179648, 131072, 2, -1048571, 0, 2, -983042, 131072, 2, -851966, 131072, 1, -917502, 131072, 0, -851967, 0, 1, -917503, 0, 0, -262156, 65536, 3, -327665, 65536, 3, -327664, 131072, 3, -262157, 0, 3)

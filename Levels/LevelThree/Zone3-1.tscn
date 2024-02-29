@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://bixagb4rsshsh"]
+
+[ext_resource type="PackedScene" uid="uid://bd01gdjwf2tmh" path="res://Levels/world.tscn" id="1_nob74"]
+[ext_resource type="PackedScene" uid="uid://ckgdvd41gp1bc" path="res://Scenes/TileMaps/Britain_Tilemap.tscn" id="2_hef1o"]
+[ext_resource type="PackedScene" uid="uid://dgp04f1hub1uv" path="res://Levels/LevelThree/Zone3-2.tscn" id="2_sqg6h"]
+[ext_resource type="PackedScene" uid="uid://spprtly86p2d" path="res://Scenes/Objects/time_rift.tscn" id="2_u8rla"]
+[ext_resource type="PackedScene" uid="uid://cwiamkyn41utn" path="res://Scenes/Objects/out_of_bounds_zone.tscn" id="3_1fxrp"]
+[ext_resource type="PackedScene" uid="uid://ofm84bh847gw" path="res://Scenes/Objects/dash_object.tscn" id="4_kya22"]
+[ext_resource type="Texture2D" uid="uid://bd6freu2cgd5b" path="res://Sprites/Britain/Britain_BG.png" id="6_rx1nm"]
+
+[node name="World" instance=ExtResource("1_nob74")]
+next_level = ExtResource("2_sqg6h")
+
+[node name="Player" parent="." index="1"]
+position = Vector2(-141, -28)
+
+[node name="Camera2D" parent="." index="2"]
+zoom = Vector2(0.8, 0.8)
+
+[node name="TimeRift" parent="HeartsContainer" index="0" instance=ExtResource("2_u8rla")]
+position = Vector2(51, -76)
+
+[node name="TimeRift2" parent="HeartsContainer" index="1" instance=ExtResource("2_u8rla")]
+position = Vector2(-21, -164)
+
+[node name="TimeRift3" parent="HeartsContainer" index="2" instance=ExtResource("2_u8rla")]
+position = Vector2(147, -44)
+
+[node name="OutOfBounds" parent="HazardContainer" index="0" instance=ExtResource("3_1fxrp")]
+position = Vector2(35, 52)
+
+[node name="dash_object" parent="DashObjectContainer" index="0" instance=ExtResource("4_kya22")]
+position = Vector2(-21, -76)
+
+[node name="dash_object2" parent="DashObjectContainer" index="1" instance=ExtResource("4_kya22")]
+position = Vector2(-21, -124)
+
+[node name="Background" parent="." index="6"]
+position = Vector2(19, 4)
+texture = ExtResource("6_rx1nm")
+
+[node name="TileMap" parent="." index="7" instance=ExtResource("2_hef1o")]
+position = Vector2(-261, 124)
+layer_0/tile_data = PackedInt32Array(-589818, 0, 5, -589817, 65536, 5, -589816, 327680, 5, -524280, 327680, 6, -458744, 327680, 7, -393208, 327680, 8, -524281, 196608, 6, -458745, 196608, 7, -393209, 196608, 8, -524282, 0, 6, -458746, 0, 7, -393210, 0, 8, -786415, 0, 5, -786414, 524288, 1, -786413, 589824, 1, -786412, 262144, 5, -720879, 0, 6, -655343, 0, 7, -589807, 0, 8, -524271, 0, 9, -458735, 0, 12, -720878, 65536, 6, -655342, 65536, 7, -589806, 65536, 8, -524270, 65536, 9, -720877, 131072, 6, -655341, 131072, 7, -589805, 131072, 8, -524269, 131072, 9, -458734, 65536, 12, -458733, 131072, 12, -458732, 262144, 12, -720876, 262144, 6, -655340, 262144, 7, -589804, 262144, 8, -524268, 262144, 9, -786420, 458752, 5, -720884, 458752, 6, -655348, 458752, 7, -589812, 458752, 12, -655336, 393216, 5, -655335, 589824, 1, -589800, 393216, 6, -524264, 393216, 7, -458728, 393216, 8, -393192, 393216, 8, -393191, 262144, 9, -458727, 262144, 8, -524263, 262144, 7, -589799, 262144, 6, -786411, 327680, 5, -720875, 327680, 6, -655339, 327680, 7, -589803, 327680, 8, -524267, 327680, 9, -458731, 327680, 12, -655334, 327680, 5, -589798, 327680, 6, -524262, 327680, 7, -458726, 327680, 8, -393190, 327680, 9, -851949, 589824, 0, -851950, 524288, 0, -720871, 589824, 0, -720872, 524288, 0, -786421, 262144, 3, -786422, 0, 3, -720885, 196608, 6, -655349, 196608, 7, -589813, 196608, 12, -589814, 0, 12, -655350, 0, 10, -720886, 0, 9)
