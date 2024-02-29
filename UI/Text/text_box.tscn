@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpaa3st37xa3p"]
+
+[ext_resource type="Texture2D" uid="uid://dkt8x28fpxowm" path="res://UI/Text/TextBubble.png" id="2_e6rn6"]
+[ext_resource type="FontFile" uid="uid://cerlrow0wyf8r" path="res://Sprites/pixel_font.ttf" id="3_p8sqm"]
+
+[node name="TextBox" type="MarginContainer"]
+offset_right = 53.0
+offset_bottom = 33.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_e6rn6")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p8sqm")
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

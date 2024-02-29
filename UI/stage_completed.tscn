@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://i042r2yro3fc"]
+
+[ext_resource type="Script" path="res://UI/stage_completed.gd" id="1_2k0gp"]
+
+[node name="StageCompleted" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.37458
+offset_top = 2.62204
+offset_right = 0.374573
+offset_bottom = 2.62204
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2k0gp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "The End!
+"
+horizontal_alignment = 1
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(64, 16)
+layout_mode = 2
+text = "Return to Main Menu
+"
+
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
