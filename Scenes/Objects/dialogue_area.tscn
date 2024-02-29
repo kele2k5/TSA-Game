@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq38k3h0fxfgg"]
+
+[sub_resource type="GDScript" id="GDScript_olhwr"]
+
+[node name="DialogueArea" type="Area2D"]
+process_mode = 3
+collision_layer = 0
+collision_mask = 16
+script = SubResource("GDScript_olhwr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
